@@ -7,11 +7,10 @@ import { PrismaService } from 'src/prisma/prisma.service';
 export class CategoryService {
   constructor(private prisma: PrismaService){}
   async create(createCategoryDto: CreateCategoryDto, image: Express.Multer.File) {
-    if (!image) {
-      return await this.prisma.category.create({ data: createCategoryDto });
-    }
-    const imageLink = await this.supabase.uploadImage(image);
-    return await this.prisma.category.create({ data: { ...createCategoryDto, icon: imageLink } });
+    // Use Multer to upload the image file
+    // Access the file using `image.path` or `image.buffer`
+    // Implement your logic to save the image path or buffer to the database using Prisma
+    // Return the created category
   }
 
   async findAll() {
