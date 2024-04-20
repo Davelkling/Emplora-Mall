@@ -21,6 +21,7 @@ export default defineNuxtConfig({
         extend: {
           colors: {
             primary: '#00ADB5',
+            darkbg:'#181B20',
             textprimary:'#2F414F',
           },
         },

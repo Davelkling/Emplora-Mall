@@ -5,20 +5,20 @@
 
 
 <template>
-  <header class="p-1 px-3 pt-2 border-b-2 border-b-black border-opacity-50">
-    <div class="container mx-auto flex justify-between items-center">
+  <header class="p-1 px-3 pt-2 border-b-2 border-b-black border-opacity-50 ">
+    <div class="container mx-auto flex justify-between items-center ">
       <!-- Desktop -->
-      <div class="hidden md:block w-full py-2">
+      <div class="hidden md:block w-full py-2 mx-20">
         <nav v-if="!isLogin" class="hidden md:flex justify-between items-center gap-8">
           <NuxtLink to="/" class="flex gap-3 items-center">
-            <img src="/logo.svg" class="h-12 w-12" alt="" />
+            <img src="/logo.svg" class="h-12 w-12 " alt="" />
             <h1 class="text-primary text-2xl font-bold">Emplora Mall</h1>
           </NuxtLink>
           <div class="flex justify-center items-center gap-8">
-            <NuxtLink class="text-lg font-semibold text-[#2F414F] hover:bg-gray-100 rounded-3xl p-2 px-4">
+            <NuxtLink class="text-lg font-semibold text-[#2F414F] hover:bg-gray-100 rounded-3xl p-2 px-4 cursor-pointer">
               Sign In
             </NuxtLink>
-            <NuxtLink class="border-2 border-primary py-0.5 px-3.5 rounded-md text-primary font-semibold text-lg hover:bg-primary hover:text-[#F1F1EF]">
+            <NuxtLink to="/signup/customer" class="border-2 border-primary py-0.5 px-3.5 rounded-md text-primary font-semibold text-lg hover:bg-primary hover:text-[#F1F1EF] cursor-pointer">
               Sign Up
             </NuxtLink>
           </div>

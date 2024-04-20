@@ -12,61 +12,73 @@ const categories = [
 
 const stores = [
     {
+        id:1,
         name: 'Product 1',
         image: 'ACE_HARDWARE.png',
         category: 'cinema',
     },
     {
+        id:2,
         name: 'Product 2',
         image: 'ACE_HARDWARE.png',
         category: 'cinema',
     },
     {
+        id:3,
         name: 'Product 3',
         image: 'ACE_HARDWARE.png',
         category: 'dining',
     },
     {
+        id:4,
         name: 'Product 4',
         image: 'ACE_HARDWARE.png',
         category: 'dining',
     },
     {
+        id:5,
         name: 'Product 5',
         image: 'ACE_HARDWARE.png',
         category: 'entertainment',
     },
     {
+        id:6,
         name: 'Product 6',
         image: 'ACE_HARDWARE.png',
         category: 'entertainment',
     },
     {
+        id:7,
         name: 'Product 7',
         image: 'ACE_HARDWARE.png',
         category: 'gadgets',
     },
     {
+        id:8,
         name: 'Product 8',
         image: 'ACE_HARDWARE.png',
         category: 'gadgets',
     },
     {
+        id:9,
         name: 'Product 9',
         image: 'ACE_HARDWARE.png',
         category: 'services',
     },
     {
+        id:10,
         name: 'Product 10',
         image: 'ACE_HARDWARE.png',
         category: 'services',
     },
     {
+        id:11,
         name: 'Product 11',
         image: 'ACE_HARDWARE.png',
         category: 'shopping',
     },
     {
+        id:12,
         name: 'Product 12',
         image: 'ACE_HARDWARE.png',
         category: 'shopping',
@@ -92,7 +104,7 @@ function setActiveCategory(category: string) {
             <div v-for="s in stores" class="">
                 <!-- {{ activeCategory }} -->
                 <div v-if="s.category == activeCategory">
-                    <NuxtLink class="flex flex-col justify-center border-2 items-center cursor-pointer p-3 m-3 ">
+                    <NuxtLink :to="`/merchants/${s.id}`" :key="s.id" class="flex flex-col justify-center border-2 items-center cursor-pointer p-3 m-3 ">
                         <img :src="`${s.image}`" class="w-40 h-40">
                         {{ s.name }}
 

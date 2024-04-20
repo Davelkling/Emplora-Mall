@@ -5,7 +5,7 @@ export class CreateUserDto {
     @Length(3,64)
     username:string;
 
-    @Length(8,64)
+    @Length(3,64)
     //@IsStrongPassword()
     password:string;
 }
