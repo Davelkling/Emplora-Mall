@@ -6,6 +6,7 @@ import { LocalStrategy } from './local.strategy';
 import { JwtModule, JwtService} from '@nestjs/jwt';
 import { PrismaModule } from 'src/prisma/prisma.module';
 import { JwtStrategy } from './jwt.strategy';
+import { AuthController } from './auth.controller';
 
 @Module({
     imports: [UsersModule, PrismaModule, PassportModule, JwtModule.register({ // Register JwtModule here
@@ -13,6 +14,7 @@ import { JwtStrategy } from './jwt.strategy';
         signOptions: { expiresIn: '7d' },
     })],
     providers: [AuthService, LocalStrategy, JwtStrategy],
-    exports: [AuthService]
+    exports: [AuthService],
+    controllers: [AuthController]
 })
 export class AuthModule {}

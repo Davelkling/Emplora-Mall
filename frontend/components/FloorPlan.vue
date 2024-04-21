@@ -5,8 +5,10 @@
 <template>
     <div>
         <!-- All Stores -->
-        <div class="flex justify-center items-center m-4">
-            <div class="flex flex-col">
+        <div class="flex justify-center items-center m-4" >
+            <!-- <div class="absolute bg-red-500 w-[58.5rem] h-[25rem]" ></div> -->
+            
+            <div class="flex flex-col " >
             <div class="flex">
                 <!-- dept. store -->
                 <div class="hover:transition-transform hover:scale-105 hover:rounded-sm hover:duration-100 bg-gray-200 px-[17.2rem] py-[6.4rem] hover:bg-primary transition-colors duration-300">

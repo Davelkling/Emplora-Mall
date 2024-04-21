@@ -5,7 +5,7 @@
 
 
 <template>
-  <header class="p-1 px-3 pt-2 border-b-2 border-b-black border-opacity-50 ">
+  <header class="p-1 px-3 pt-2 shadow-md">
     <div class="container mx-auto flex justify-between items-center ">
       <!-- Desktop -->
       <div class="hidden md:block w-full py-2 mx-20">

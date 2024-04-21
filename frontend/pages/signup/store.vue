@@ -10,20 +10,19 @@
 </script>
 
 <template>
-    <div class="">
-        <header class=" p-1 px-3 pt-2 border-b-2 border-b-black border-opacity-50 bg-white">
-            <div class="container mx-auto flex justify-between items-center ">
-                <div class="w-full flex justify-between items-center mx-20 py-2">
-                    <NuxtLink to="/" class="flex gap-3 items-center">
-                        <img src="/logo.svg" class="h-12 w-12" alt="" />
-                        <h1 class="text-primary text-2xl font-bold">Emplora Mall</h1>
-                    </NuxtLink>
-                </div>
-
+    <header class=" p-1 px-3 pt-2 border-b-2 border-b-black border-opacity-50 bg-white">
+        <div class="container mx-auto flex justify-between items-center ">
+            <div class="w-full flex justify-between items-center mx-20 py-2">
+                <NuxtLink to="/" class="flex gap-3 items-center">
+                    <img src="/logo.svg" class="h-12 w-12" alt="" />
+                    <h1 class="text-primary text-2xl font-bold">Emplora Mall</h1>
+                </NuxtLink>
             </div>
-        </header>
-        <div class="container mx-auto flex flex-row-reverse justify-evenly items-center">
 
+        </div>
+    </header>
+    <div class="container mx-auto">
+        <div class=" flex flex-row-reverse justify-between items-center">
             <div class="w-full flex flex-col justify-center items-center gap-4">
                 <div class="text-xl font-medium">
                     Create your own 
