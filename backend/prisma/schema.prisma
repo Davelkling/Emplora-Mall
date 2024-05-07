@@ -13,17 +13,31 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-enum UserType {
-  Customer
-  Store
-  Admin
-}
+// enum UserType {
+//   Customer
+//   Store
+//   Admin
+// }   
 
 model User {
-  id       Int      @id @default(autoincrement())
-  username String   @unique
-  password String
-  type     UserType
+  id        Int      @id @default(autoincrement())
+  username  String   @unique
+  password  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  // type     UserType @default(Customer)
+}
+
+model Store {
+  id         Int       @id @default(autoincrement())
+  username   String    @unique
+  password   String
+  address    String
+  category   Category? @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  categoryId Int
+  products   Product[]
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
 }
 
 model Category {
@@ -33,10 +47,56 @@ model Category {
   store Store[]
 }
 
-model Store {
-  id         Int       @id @default(autoincrement())
-  storename  String    @unique
-  password   String
-  category   Category? @relation(fields: [categoryId], references: [id])
-  categoryId Int
+model Vendor {
+  id        Int             @id @default(autoincrement())
+  name      String
+  image     String?
+  createdAt DateTime        @default(now())
+  updatedAt DateTime        @updatedAt
+  products  VendorProduct[]
+}
+
+model Brand {
+  id             Int             @id @default(autoincrement())
+  name           String
+  image          String?
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+  vendorProducts VendorProduct[]
+}
+
+model VendorProduct {
+  id            Int          @id @default(autoincrement())
+  name          String
+  description   String
+  brand         Brand?       @relation(fields: [brandId], references: [id], onDelete: Cascade)
+  brandId       Int?
+  vendor        Vendor       @relation(fields: [vendorId], references: [id], onDelete: Cascade)
+  vendorId      Int
+  productType   ProductType? @relation(fields: [productTypeId], references: [id], onDelete: Cascade)
+  productTypeId Int?
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+  Product       Product[]
+}
+
+model ProductType {
+  id        Int             @id @default(autoincrement())
+  name      String
+  createdAt DateTime        @default(now())
+  updatedAt DateTime        @updatedAt
+  products  VendorProduct[]
+}
+
+model Product {
+  id          Int           @id @default(autoincrement())
+  name        String
+  description String
+  price       Float
+  product     VendorProduct @relation(fields: [productId], references: [id], onDelete: Cascade)
+  productId   Int
+  store       Store         @relation(fields: [storeId], references: [id], onDelete: Cascade)
+  storeId     Int
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
 }
